@@ -1,0 +1,14 @@
+{
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/kelolosan", "dest": "/" },
+    { "src": "/congratulations", "dest": "/" },
+    { "src": "/facility", "dest": "/" },
+    { "src": "/office", "dest": "/" },
+    { "src": "/buletin", "dest": "/" },
+    { "src": "/testimonial", "dest": "/" },
+    { "src": "/forget-password", "dest": "/" },
+    { "src": "/confirm-password", "dest": "/" },
+    { "src": "/dashboard", "dest": "/" }
+  ]
+}

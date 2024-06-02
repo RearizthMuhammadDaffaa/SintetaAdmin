@@ -90,35 +90,35 @@ const FormAddCongratulations = () => {
        <div className="field">
                <label  className="label">Name</label>
                <div className="control">
-                 <input type="text" className="input" value={name} onChange={(e)=>setName(e.target.value)} placeholder='kelas'/>
-               </div>
-             </div>
-
-             <div className="field">
-               <label  className="label">Asal Sekolah</label>
-               <div className="control">
-                 <input type="text" value={about} onChange={(e)=>setAbout(e.target.value)} className="input" placeholder='About'/>
+                 <input type="text" className="input" value={name} onChange={(e)=>setName(e.target.value)} placeholder='Nama'/>
                </div>
              </div>
 
              <div className="field">
                <label  className="label">Diterima di</label>
                <div className="control">
-                 <input type="text" className="input" value={desc} onChange={(e)=>setDesc(e.target.value)} placeholder='Description'/>
+                 <input type="text" value={about} onChange={(e)=>setAbout(e.target.value)} className="input" placeholder='Diterima di'/>
                </div>
              </div>
 
              <div className="field">
-               <label  className="label">Jurusan</label>
+               <label  className="label">Asal Sekolah</label>
                <div className="control">
-                 <input type="text" className="input" value={grade} onChange={(e)=>setGrade(e.target.value)} placeholder='Grade'/>
+                 <input type="text" className="input" value={desc} onChange={(e)=>setDesc(e.target.value)} placeholder='Asal Sekolah'/>
+               </div>
+             </div>
+
+             <div className="field">
+               <label  className="label">Grade</label>
+               <div className="control">
+                 <input type="text" className="input" value={grade} onChange={(e)=>setGrade(e.target.value)} placeholder='Jurusan'/>
                </div>
              </div>
 
              <div className="field">
                <label  className="label">Tahun Kelolosan</label>
                <div className="control">
-                 <input type="text" className="input" value={year} onChange={(e)=>setYear(e.target.value)} placeholder='Grade'/>
+                 <input type="text" className="input" value={year} onChange={(e)=>setYear(e.target.value)} placeholder='Tahun Kelolosan'/>
                </div>
              </div>
 

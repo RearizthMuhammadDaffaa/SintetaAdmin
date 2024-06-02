@@ -104,21 +104,21 @@ const FormAddKelolosan = () => {
              <div className="field">
                <label  className="label">Diterima di</label>
                <div className="control">
-                 <input type="text" className="input" value={desc} onChange={(e)=>setDesc(e.target.value)} placeholder='Description'/>
+                 <input type="text" className="input" value={desc} onChange={(e)=>setDesc(e.target.value)} placeholder='Diterima di'/>
                </div>
              </div>
 
              <div className="field">
                <label  className="label">Jurusan</label>
                <div className="control">
-                 <input type="text" className="input" value={grade} onChange={(e)=>setGrade(e.target.value)} placeholder='Grade'/>
+                 <input type="text" className="input" value={grade} onChange={(e)=>setGrade(e.target.value)} placeholder='Jurusan'/>
                </div>
              </div>
 
              <div className="field">
                <label  className="label">Tahun Kelolosan</label>
                <div className="control">
-                 <input type="text" className="input" value={year} onChange={(e)=>setYear(e.target.value)} placeholder='Grade'/>
+                 <input type="text" className="input" value={year} onChange={(e)=>setYear(e.target.value)} placeholder='Tahun Kelolosan'/>
                </div>
              </div>
 

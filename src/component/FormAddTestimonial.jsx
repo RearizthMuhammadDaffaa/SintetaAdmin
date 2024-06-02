@@ -23,8 +23,8 @@ const FormAddTestimonial = () => {
     try {
       const formData = new FormData();
       formData.append('name', name);
-      formData.append('acceptedSchool', about);
-      formData.append('graduatedFrom', desc);
+      formData.append('acceptedSchool', desc);
+      formData.append('graduatedFrom', about);
       formData.append('grade', grade);
       formData.append('description', year);
       formData.append('image',img)
@@ -111,7 +111,16 @@ const FormAddTestimonial = () => {
              <div className="field">
                <label  className="label">Grade</label>
                <div className="control">
-                 <input type="text" className="input" value={grade} onChange={(e)=>setGrade(e.target.value)} placeholder='Grade'/>
+               <div class="select">
+                  <select value={grade} onChange={(e)=>setGrade(e.target.value)}>
+                    <option>Select Grade</option>
+                    <option value='sd'>SD</option>
+                    <option value='smp'>SMP</option>
+                    <option value='sma'>SMA</option>
+                  </select>
+                </div>
+
+                 {/* <input type="text" className="input" value={grade} onChange={(e)=>setGrade(e.target.value)} placeholder='Grade'/> */}
                </div>
              </div>
 
@@ -119,7 +128,7 @@ const FormAddTestimonial = () => {
                <label  className="label">Description</label>
                <div className="control">
                  {/* <input type="text" className="input" value={year} onChange={(e)=>setYear(e.target.value)} placeholder='Grade'/> */}
-                 <textarea name="description" id="" onChange={(e)=>setYear(e.target.value)}  cols="50" rows="50">
+                 <textarea name="description" id="" onChange={(e)=>setYear(e.target.value)}  className='textarea'>
 
                  </textarea>
                </div>

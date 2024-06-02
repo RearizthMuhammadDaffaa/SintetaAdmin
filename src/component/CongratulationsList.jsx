@@ -58,6 +58,7 @@ const CongratulationsList = () => {
       <h1 className='title'>Card Kelolosan</h1>
       <h2 className='subtitle'>List of Card Kelolosan</h2>
       <Link to="/congratulations/add" className='button is-primary mb-2'>Add New</Link>
+      <div className='table-container is-scrollable'> 
       <table className='table is-striped is-fullwidth'>
         <thead>
           <tr>
@@ -89,6 +90,7 @@ const CongratulationsList = () => {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   )
 }

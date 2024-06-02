@@ -58,6 +58,7 @@ const TestimonialList = () => {
       <h1 className='title'>Testimoni</h1>
       <h2 className='subtitle'>List of Testimoni</h2>
       <Link to="/testimonial/add" className='button is-primary mb-2'>Add New</Link>
+      <div className='table-container is-scrollable'> 
       <table className='table is-striped is-fullwidth'>
         <thead>
           <tr>
@@ -89,6 +90,7 @@ const TestimonialList = () => {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   )
 }

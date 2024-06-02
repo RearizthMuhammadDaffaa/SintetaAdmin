@@ -59,11 +59,12 @@ const FormEditTestimonial = () => {
   const getKelasById = async() => {
     const response = await axios.get(`https://api.bimbel-sinteta.id/api/v1/testimonial/${id}`)
     setName(response.data.data.name)
-    setAbout(response.data.data.about)
-    setDesc(response.data.data.description)
-    setYear(response.data.data.yearAccepted)
-    setGrade(response.data.data.grade)
+    setAbout(response.data.data.graduatedFrom)
+    setDesc(response.data.data.acceptedSchool)
+    setYear(response.data.data.grade)
+    setGrade(response.data.data.description)
     setImg(response.data.data.picture)
+    console.log(response.data.data);
   }
 
   useEffect(()=>{
@@ -105,7 +106,15 @@ const FormEditTestimonial = () => {
              <div className="field">
                <label  className="label">Grade</label>
                <div className="control">
-                 <input type="text" className="input" value={year} onChange={(e)=>setYear(e.target.value)} placeholder='Tahun Diterima'/>
+               <div class="select">
+                  <select value={year} onChange={(e)=>setYear(e.target.value)}>
+                    <option>{year}</option>
+                    <option value='sd'>SD</option>
+                    <option value='smp'>SMP</option>
+                    <option value='sma'>SMA</option>
+                  </select>
+                </div>
+                
                </div>
              </div>
 
@@ -113,7 +122,7 @@ const FormEditTestimonial = () => {
                <label  className="label">Description</label>
                <div className="control">
                  {/* <input type="text" className="input" value={grade} onChange={(e)=>setGrade(e.target.value)} placeholder='Jurusan'/> */}
-                 <textarea name="" id="" cols="80" rows="10" onChange={(e)=>setGrade(e.target.value)} placeholder='descripsi'>{grade}</textarea>
+                 <textarea name="" id="" value={grade} onChange={(e)=>setGrade(e.target.value)} className='textarea' placeholder='descripsi'>{grade}</textarea>
                </div>
              </div>
 

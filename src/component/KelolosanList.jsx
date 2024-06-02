@@ -90,7 +90,7 @@ const KelolosanList = () => {
 
 
   return (
-    <div>
+    <div className='container'>
       <h1 className='title'>Bukti Kelolosan</h1>
       <h2 className='subtitle'>List of Bukti Kelolosan</h2>
       <Link to="/kelolosan/add" className='button is-primary mb-2'>Add New</Link>
@@ -117,6 +117,7 @@ const KelolosanList = () => {
           </div>
         </div>
       </div>
+      <div className='table-container is-scrollable'>
       <table className='table is-striped is-fullwidth'>
         <thead>
           <tr>
@@ -135,6 +136,10 @@ const KelolosanList = () => {
               return item;
             } else if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
               return item;
+            } else if (item.graduatedFrom.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return item;
+            } else if (item.acceptedSchool.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return item;
             }
           }).map((item, index) => (
             <tr key={item.id}>
@@ -152,6 +157,7 @@ const KelolosanList = () => {
           ))}
         </tbody>
       </table>
+      </div>
       <nav className="pagination is-centered" role="navigation" aria-label="pagination">
         <ul className="pagination-list">
           {Array.from({ length: Math.ceil(filteredKelas.length / itemsPerPage) }, (_, i) => (

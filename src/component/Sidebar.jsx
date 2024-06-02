@@ -19,7 +19,7 @@ const Sidebar = () => {
     <li><NavLink to={"/kelolosan"}><IoPricetag /> Kelolosan</NavLink></li>
     {/* <li><NavLink to={"/office"}><IoPricetag /> Cabang</NavLink></li> */}
     {/* <li><NavLink to={"/buletin"}><IoPricetag /> Artikel</NavLink></li> */}
-    {/* <li><NavLink to={"/testimonial"}><IoPricetag /> Testimoni</NavLink></li> */}
+    <li><NavLink to={"/testimonial"}><IoPricetag /> Testimoni</NavLink></li>
     <li><NavLink to={"/congratulations"}><IoPricetag />Card Kelolosan</NavLink></li>
   </ul>
   {/* <p className="menu-label">

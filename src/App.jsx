@@ -35,6 +35,10 @@ import AddCongratulations from "./pages/AddCongratulations"
 import EditCongratulations from "./pages/EditCongratulations"
 import ForgetPassword from "./component/ForgetPassword"
 import ConfirmPassword from "./component/ConfirmPassword"
+import PromoList from "./component/PromoList"
+import Promo from "./pages/Promo"
+import AddPromo from "./pages/AddPromo"
+import EditPromo from "./pages/EditPromo"
 function App() {
   
 
@@ -75,6 +79,9 @@ function App() {
               <Route path="/congratulations" element={<Congratulations />} />
               <Route path="/congratulations/add" element={<AddCongratulations />} />
               <Route path="/congratulations/edit/:id" element={<EditCongratulations />} />
+              <Route path="/promo" element={<Promo />} />
+              <Route path="/promo/add" element={<AddPromo />} />
+              <Route path="/promo/edit/:id" element={<EditPromo />} />
             </Route>
           </Routes>
         </AuthProvider>

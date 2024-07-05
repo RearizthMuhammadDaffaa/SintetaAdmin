@@ -21,6 +21,7 @@ const Sidebar = () => {
     {/* <li><NavLink to={"/buletin"}><IoPricetag /> Artikel</NavLink></li> */}
     <li><NavLink to={"/testimonial"}><IoPricetag /> Testimoni</NavLink></li>
     <li><NavLink to={"/congratulations"}><IoPricetag />Card Kelolosan</NavLink></li>
+    <li><NavLink to={"/promo"}><IoPricetag />Promo</NavLink></li>
   </ul>
   {/* <p className="menu-label">
     Admin

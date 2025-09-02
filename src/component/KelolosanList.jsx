@@ -24,6 +24,8 @@ const KelolosanList = () => {
     const filtered = kelas.filter(item => {
       return item.yearAccepted.includes(yearFilter);
     });
+    
+    
     setFilteredKelas(filtered);
   }, [kelas, yearFilter]);
 
@@ -33,8 +35,10 @@ const KelolosanList = () => {
       const response = await axios.get("https://api.bimbel-sinteta.id/api/v1/acceptedUniversity");
       const data = response.data.data;
 
-      const uniqueYears = [...new Set(data.map(item => item.year))];
+      const uniqueYears = [...new Set(data.map(item => item.yearAccepted))].sort((a, b) => b - a);
       setYears(uniqueYears);
+      
+      
 
       const updatedFacility = await Promise.all(
         data.map(async (item) => {
@@ -109,7 +113,9 @@ const KelolosanList = () => {
             <select onChange={(e) => handleYearFilter(e.target.value)}>
               <option value="">Filter by Year</option>
               
-                <option value="2024">2024</option>
+                {years.map((data,index) => (
+                  <option value={data} key={index}>{data}</option>
+                ))}
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
               

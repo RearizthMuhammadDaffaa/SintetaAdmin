@@ -4,9 +4,9 @@ import axios from 'axios';
 
 const FormEditKelolosan = () => {
   const [name,setName] = useState('');
-  const [about,setAbout] = useState('');
-  const [desc,setDesc] = useState('');
-  const [grade,setGrade] = useState('');
+  const [gratuated,setGratuated] = useState('');
+  const [accaptedSchool,setAcceptedSchool] = useState('');
+  const [major,setMajor] = useState('');
   const [year,setYear] = useState('');
   const [img,setImg] = useState(null);
   const [msg,setMsg] = useState('');
@@ -27,18 +27,19 @@ const FormEditKelolosan = () => {
     try {
       const formData = new FormData();
       formData.append('name', name);
-      formData.append('graduatedFrom', about);
-      formData.append('acceptedSchool', desc);
+      formData.append('graduatedFrom', gratuated);
+      formData.append('acceptedSchool', accaptedSchool);
       formData.append('yearAccepted', year);
-      formData.append('major', grade);
-        formData.append('image', img);
+      formData.append('major', major);
+  
+      formData.append('image', img);
+    
       
 
       const token = localStorage.getItem('site');
       const config = {
         headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'multipart/form-data' 
+          'Authorization': `Bearer ${token}`
         }
       };
 
@@ -59,11 +60,13 @@ const FormEditKelolosan = () => {
   const getKelasById = async() => {
     const response = await axios.get(`https://api.bimbel-sinteta.id/api/v1/acceptedUniversity/${id}`)
     setName(response.data.data.name)
-    setAbout(response.data.data.about)
-    setDesc(response.data.data.description)
+    setGratuated(response.data.data.graduatedFrom)
+    setAcceptedSchool(response.data.data.acceptedSchool)
     setYear(response.data.data.yearAccepted)
-    setGrade(response.data.data.grade)
+    setMajor(response.data.data.major)
     setImg(response.data.data.picture)
+   
+    
   }
 
   useEffect(()=>{
@@ -91,14 +94,14 @@ const FormEditKelolosan = () => {
              <div className="field">
                <label  className="label">Asal Sekolah</label>
                <div className="control">
-                 <input type="text" value={about} onChange={(e)=>setAbout(e.target.value)} className="input" placeholder='asal sekolah'/>
+                 <input type="text" value={gratuated} onChange={(e)=>setGratuated(e.target.value)} className="input" placeholder='asal sekolah'/>
                </div>
              </div>
 
              <div className="field">
                <label  className="label">Diterima di</label>
                <div className="control">
-                 <input type="text" className="input" value={desc} onChange={(e)=>setDesc(e.target.value)} placeholder='Diterima di'/>
+                 <input type="text" className="input" value={accaptedSchool} onChange={(e)=>setAcceptedSchool(e.target.value)} placeholder='Diterima di'/>
                </div>
              </div>
 
@@ -112,14 +115,14 @@ const FormEditKelolosan = () => {
              <div className="field">
                <label  className="label">Jurusan</label>
                <div className="control">
-                 <input type="text" className="input" value={grade} onChange={(e)=>setGrade(e.target.value)} placeholder='Jurusan'/>
+                 <input type="text" className="input" value={major} onChange={(e)=>setMajor(e.target.value)} placeholder='Jurusan'/>
                </div>
              </div>
 
              <div className="field">
                <label  className="label">Gambar</label>
                <div className="control">
-                 <input type="file"  className="input" onChange={handleFileChange} placeholder='Grade'/>
+                 <input type="file"  className="input" onChange={handleFileChange} placeholder='major'/>
                </div>
              
              </div>
